@@ -16,13 +16,11 @@ _<h3><ins>Membres :</ins></h3>_
 
 _<h3><ins>Contenu du dépot</ins></h3>_
 
-> <ins>homepage.php</ins>                  : page principale
-> <ins>/doc</ins>                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
-> <ins>description</ins>                   :
-> <ins>utilisateurs d'essais fournis</ins> : _à créer_
+> <ins>homepage.php</ins>                  : page principale  <br>
+> <ins>/doc</ins>                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM) <br>
 
 _<h3><ins>Structure</ins></h3>_
-```
+
 main                   <br>                       
 |                      <br>
 |___doc                <br>    
@@ -31,4 +29,5 @@ main                   <br>
 |___README.MD          <br>            
 |                      <br>
 |___homepage.php       <br>
-```
+
+ <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
