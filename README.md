@@ -20,14 +20,20 @@ _<h3><ins>Contenu du dépot</ins></h3>_
 > <ins>/doc</ins>                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM) <br>
 
 _<h3><ins>Structure</ins></h3>_
-<p>
-main                   <br>                       
-|                      <br>
-|___doc                <br>    
-|&nbsp&nbsp&nbsp|_MCD,MLD,ETC      <br>                
-|                      <br>
-|___README.MD          <br>            
-|                      <br>
-|___homepage.php       <br>
-</p>
+
+```
+main
+|  README.MD
+|  homepage.php
+|
+└───doc
+    | DCU.png
+    | DCU M2L
+    | DCU.drawio
+    |
+    └───MCD
+          mcd
+          MCD.lo1
+          MCD.loo
+```
  <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
