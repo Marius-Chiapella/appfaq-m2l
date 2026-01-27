@@ -7,9 +7,14 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 _<h3><ins>Membres :</ins></h3>_
 
-- Marius CHIAPELLA <br> - Anthony GALEOTE <br> - Théliau ANOUILH <br> - Liam LACAN
+<p>
+- Marius CHIAPELLA <br> 
+- Anthony GALEOTE <br> 
+- Théliau ANOUILH <br> 
+- Liam LACAN
+</p>
 
-  _<h3><ins>Contenu du dépot</ins></h3>_
+_<h3><ins>Contenu du dépot</ins></h3>_
 
 - <ins>$\textcolor{#8888cc}{homepage.php}$</ins> : page principale
 - <ins>/doc</ins> : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
