@@ -11,6 +11,6 @@ $titre = "test";
 <body>
     <h1>Projet test</h1>
     <h2><?$titre?></h2>
-    
+    <p></p>
 </body>
 </html>
