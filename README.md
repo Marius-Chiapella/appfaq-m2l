@@ -4,13 +4,13 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 **<u>Durée</u>** : du **27/01/2026** au **xx/xx/2026**
 
-*<h3><u>Membres</u></h3>* : 
-    "-" Marius CHIAPELLA <br>
-    "-" Anthony GALEOTE  <br>
-    "-" Théliau ANOUILH  <br>
-    "-" Liam LACAN
+*<h3><u>Membres :</u></h3>*  
+    - Marius CHIAPELLA <br>
+    - Anthony GALEOTE  <br>
+    - Théliau ANOUILH  <br>
+    - Liam LACAN
 
 - $\textcolor{#8888cc}{homepage.php}$                  : page principale
 - $\textcolor{#8888cc}{/doc}$                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
-- $\textcolor{#8888cc}{description de processus d'installation}$
-- <u>utilisateurs d'essais fournis</u> : *à créer*
+- $\textcolor{#8888cc}{"description de processus d'installation"}$
+- <a style= "text-decoration: underline">utilisateurs d'essais fournis</a> : *à créer*
