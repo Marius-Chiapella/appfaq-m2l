@@ -35,5 +35,6 @@ main
           mcd
           MCD.lo1
           MCD.loo
+          MCD.png
 ```
  <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
