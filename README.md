@@ -10,7 +10,7 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
     - Théliau ANOUILH
     - Liam LACAN
 
-- $\color{#eecbff}{homepage.php}$                  : page principale
+- $\textcolor{#eecbff}{homepage.php}$                  : page principale
 - _doc/_                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
-- *$\color{grey}{"description de processus d'installation"}$*
+- $\textcolor{grey}{"description de processus d'installation"}$
 - _utilisateurs d'essais fournis_ : *à créer*
