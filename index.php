@@ -1,5 +1,5 @@
 <?php
-
+$titre = "test";
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -10,5 +10,6 @@
 </head>
 <body>
     <h1>Projet test</h1>
+    <h2><?$titre?></h2>
 </body>
 </html>
