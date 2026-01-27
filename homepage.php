@@ -11,6 +11,9 @@ $titre = "test";
 <body>
     <h1>Projet test</h1>
     <h2><?$titre?></h2>
+<<<<<<< HEAD
     <p></p>
+=======
+>>>>>>> b78db33164078cc3c0e591479f844d70e12d1198
 </body>
 </html>
