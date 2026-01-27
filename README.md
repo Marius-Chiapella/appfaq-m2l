@@ -13,4 +13,4 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 - $\textcolor{#8888cc}{homepage.php}$                  : page principale
 - $\textcolor{#8888cc}{/doc}$                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
 - $\textcolor{#8888cc}{"description de processus d'installation"}$
-- <a style= "text-decoration: underline">utilisateurs d'essais fournis</a> : *à créer*
+- <p style= "text-decoration: underline">utilisateurs d'essais fournis</p> : *à créer*
