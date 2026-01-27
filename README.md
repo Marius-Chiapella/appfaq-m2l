@@ -11,6 +11,6 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
     - Liam LACAN
 
 - $\textcolor{#8888cc}{homepage.php}$                  : page principale
-- _doc/_                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
-- $\textcolor{#8888cc}{*"description &nbsp de processus d'installation"*}$
-- _utilisateurs d'essais fournis_ : *à créer*
+- $\textcolor{#8888cc}{/doc}$                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM)
+- $\textcolor{#8888cc}{*description de processus d'installation*}$
+- <u>utilisateurs d'essais fournis</u> : *à créer*
