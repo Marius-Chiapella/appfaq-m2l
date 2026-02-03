@@ -40,15 +40,7 @@ $titre = "Accueil";
                     <label for="Password">Mot de passe</label> <br>
                     <input type="password" name="Password" id="password">
                 </div>
-                <div class="inputs">
-                    <label for="ligue">Ligue</label> <br>
-                    <select name="ligue" id="ligue">
-                        <option value="foot" selected>Football</option>
-                        <option value="basket">Basket</option>
-                        <option value="volley">Volleyball</option>
-                        <option value="rugby">Rugby</option>
-                    </select>
-                </div>
+
                 <div>
                     <input type="submit" value="Enregistrer" id="submit">
                     <input type="reset" value="Annuler" id="reset" onclick="hideall()">
@@ -96,18 +88,22 @@ $titre = "Accueil";
 
 <script>
 
-function show_login() {
-    document.getElementById("register_form").style.display  = "none";
-    document.getElementById("login_form").style.display     = "block";
+function default_show() {
     document.getElementById("pop-up_form").style.display    = "block";
     document.getElementById("overlay").style.display        = "block";
 }
 
+function show_login() {
+    document.getElementById("register_form").style.display  = "none";
+    document.getElementById("login_form").style.display     = "block";
+    default_show()
+}
+
+
 function show_register() {
     document.getElementById("login_form").style.display     = "none";
     document.getElementById("register_form").style.display  = "block";
-    document.getElementById("pop-up_form").style.display    = "block";
-    document.getElementById("overlay").style.display        = "block";
+    default_show()
 
 
 }
@@ -118,52 +114,6 @@ function hideall() {
     document.getElementById("pop-up_form").style.display    = "none";
     document.getElementById("overlay").style.display        = "none";
 }
-
-
-// $(document).ready(function () {
-//     $("#login").click(function () {
-//         $("#pop-up_login").show();
-//     });
-//     //Contact Form validation on click event
-//     $("#login_form").on("submit", function () {
-//         var valid = true;
-//         $(".info").html("");
-//         $("inputBox").removeClass("input-error");
-        
-//         var userName = $("#userName").val();
-//         var userEmail = $("#userEmail").val();
-//         var subject = $("#subject").val();
-//         var message = $("#message").val();
-
-//         if (userName == "") {
-//             $("#userName-info").html("required.");
-//             $("#userName").addClass("input-error");
-//         }
-//         if (userEmail == "") {
-//             $("#userEmail-info").html("required.");
-//             $("#userEmail").addClass("input-error");
-//             valid = false;
-//         }
-//         if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
-//         {
-//             $("#userEmail-info").html("invalid.");
-//             $("#userEmail").addClass("input-error");
-//             valid = false;
-//         }
-
-//         if (subject == "") {
-//             $("#subject-info").html("required.");
-//             $("#subject").addClass("input-error");
-//             valid = false;
-//         }
-//         if (message == "") {
-//             $("#userMessage-info").html("required.");
-//             $("#message").addClass("input-error");
-//             valid = false;
-//         }
-//         return valid;
-//     });
-// });
 
 </script>
 
