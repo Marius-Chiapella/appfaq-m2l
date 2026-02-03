@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 03 fév. 2026 à 14:53
+-- Généré le : mar. 03 fév. 2026 à 16:21
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.1.25
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `faq_ligue`
 --
+CREATE DATABASE IF NOT EXISTS `faq_ligue` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `faq_ligue`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `faq`
 --
 
+DROP TABLE IF EXISTS `faq`;
 CREATE TABLE `faq` (
   `id_faq` bigint(11) NOT NULL,
   `question` text NOT NULL,
@@ -51,6 +54,7 @@ INSERT INTO `faq` (`id_faq`, `question`, `reponse`, `dat_question`, `dat_reponse
 -- Structure de la table `ligue`
 --
 
+DROP TABLE IF EXISTS `ligue`;
 CREATE TABLE `ligue` (
   `id_ligue` bigint(11) NOT NULL,
   `lib_ligue` varchar(50) NOT NULL
@@ -73,6 +77,7 @@ INSERT INTO `ligue` (`id_ligue`, `lib_ligue`) VALUES
 -- Structure de la table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id_user` bigint(11) NOT NULL,
   `pseudo` varchar(20) NOT NULL,
@@ -97,6 +102,7 @@ INSERT INTO `user` (`id_user`, `pseudo`, `mdp`, `mail`, `id_usertype`, `id_ligue
 -- Structure de la table `usertype`
 --
 
+DROP TABLE IF EXISTS `usertype`;
 CREATE TABLE `usertype` (
   `id_usertype` bigint(11) NOT NULL,
   `lib_usertype` varchar(50) NOT NULL,
