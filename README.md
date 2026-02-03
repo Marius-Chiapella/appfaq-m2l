@@ -33,16 +33,51 @@ main
 |  homepage.php
 |
 └───doc
-    | DCU.png
-    | DCU M2L
-    | DCU.drawio
+|   |
+|   |
+|   └───DCU
+|   |     DCU.png
+|   |     DCU M2L
+|   |     DCU.drawio
+|   |
+|   └───faq-ligue
+|   |     data.sql
+|   |     structure.sql
+|   |
+|   └───IHM-Sitemap
+|   |     IHM projet AP.drawio
+|   |     Sitemap_
+|   |
+|   └───MCD
+|   |     mcd
+|   |     MCD.lo1
+|   |     MCD.loo
+|   |     MCD.png
+|   |
+|   └───MLD
+|         MLD.png
+|
+└───appfaq-site
     |
-    └───MCD
-          mcd
-          MCD.lo1
-          MCD.loo
-          MCD.png
+    └───css
+    |     main.css
+    |
+    └───pages
+        | index.php
+        | index-style.css
+        |
+        └───subpages
+            |     list.php
+            |     login.php
+            |     register.php
+            |     style.css
+            |
+            └───list_subpages
+                      add.php
+                      delete.php
+                      edit.php
 ```
  <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
+
 
 ***
