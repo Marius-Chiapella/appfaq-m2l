@@ -5,6 +5,8 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 **<u>Durée</u>** : du **27/01/2026** au **xx/xx/2026**
 
+***
+
 _<h3><ins>Membres :</ins></h3>_
 
 <p>
@@ -14,10 +16,14 @@ _<h3><ins>Membres :</ins></h3>_
 - Liam LACAN
 </p>
 
+***
+
 _<h3><ins>Contenu du dépot</ins></h3>_
 
 > <ins>homepage.php</ins>                  : page principale  <br>
 > <ins>/doc</ins>                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM) <br>
+
+***
 
 _<h3><ins>Structure</ins></h3>_
 
@@ -38,3 +44,5 @@ main
           MCD.png
 ```
  <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
+
+***
