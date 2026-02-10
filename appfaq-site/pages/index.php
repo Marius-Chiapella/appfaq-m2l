@@ -37,6 +37,8 @@ if (!isset($_SESSION['user'])) {
             <?php
             if (isset($username)) {
                 echo "<p>Utilisateur actuel : " . $username['pseudo']. "</p>";
+            } else {
+                echo "<p> Utilisateur deconnecté";
             }
             ?>
             
