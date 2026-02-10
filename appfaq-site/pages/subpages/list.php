@@ -7,7 +7,7 @@ if (!isset($_SESSION['user'])) {
     header("Location: ../index.php");
     exit();
 } else {
-    $username = $_SESSION['user'];
+    $username = strval($_SESSION['user']);
     // $username = "jef";
 }
 
