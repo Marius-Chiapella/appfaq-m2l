@@ -36,7 +36,7 @@ $username = $_SESSION['username'] ?? 'non connecté';
         <h1><?= $titre ?></h1>
 
 
-<!--        <div id="pop-up_form">
+        <div id="pop-up_form">
 
             <form action="subpages/login.php" method="post" id="login_form">
                 <div class="inputs">
@@ -91,7 +91,7 @@ $username = $_SESSION['username'] ?? 'non connecté';
         </form>
     </div>
 
--->
+
 <script>
 
     const login_form    = document.getElementById("login_form");
