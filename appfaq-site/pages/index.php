@@ -3,7 +3,7 @@ session_start();
 $titre = "Accueil";
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = null;
+    $_SESSION['username'] = null; // Non connecté
 }
 $username = $_SESSION['username'] ?? 'non connecté';
 ?>
@@ -21,24 +21,21 @@ $username = $_SESSION['username'] ?? 'non connecté';
 
 <body>
     <div class="barre_haute">
-            <a href="subpages/register.php" id="register">S'inscrire</a>
-            <a href="subpages/login.php" id="login">Se connecter</a>
         <h2>AppFaq - M2L</h2>
-        
-    </div>
-
-    <div class="content">
-        <h1><?= $titre ?></h1>
-
-        <?php if (!$username || $username === 'non connecté'): 
-            echo "Non connecté";
-            ?>
-
+        <?php if (!$username || $username === 'non connecté'): ?>
+            <a href="subpages/register.php" id="register">S'inscrire</a>
+            <a href="" id="login">Se connecter</a>
         <?php else: ?>
             <span>Bonjour, <?= htmlspecialchars($username) ?></span>
             <a href="subpages/deconnexion.php">Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
+    </div>
+
+    <div class="content">
+        <h1><?= $titre ?></h1>
+
+
 <!--        <div id="pop-up_form">
 
             <form action="subpages/login.php" method="post" id="login_form">
