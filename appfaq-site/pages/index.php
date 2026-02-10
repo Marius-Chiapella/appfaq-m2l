@@ -37,6 +37,8 @@ if (!isset($_SESSION['user'])) {
             <?php
             if (isset($username)) {
                 echo "<p>Utilisateur actuel : " . $username['pseudo']. "</p>";
+
+                echo "<a href='subpages/list.php'> aller sur la liste</a>";
             } else {
                 echo "<p> Utilisateur deconnecté";
             }

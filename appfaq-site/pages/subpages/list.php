@@ -3,12 +3,12 @@ include "fonctions.inc.php";
 session_start();
 
 // Redirige vers la page de connexion si on n'est pas connecté
-if (!isset($_SESSION['user'])) {
+if (isset($_SESSION['user'])) {
     header("Location: ../index.php");
     exit();
 } else {
-    $username = strval($_SESSION['user']);
-    // $username = "jef";
+    // $username = strval($_SESSION['user']);
+    $username = "jef";
 }
 
 // Connexion à la base de données
