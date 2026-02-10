@@ -1,12 +1,13 @@
 <?php
 session_start();
+echo "<pre>";  
+print_r($_SESSION);
+echo "</pre>";
+
 $titre = "Accueil";
 
-if (!isset($_SESSION['user'])) {
-    $_SESSION['user'] = null; // Non connecté
-} else {
-    $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
-}
+$username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +28,7 @@ if (!isset($_SESSION['user'])) {
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
-            <a href="<?php $_SESSION['user'] = null?>">Se déconnecter</a>
+            <a onclick="disconnect()">Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
@@ -133,6 +134,11 @@ if (!isset($_SESSION['user'])) {
             overlay.style.display = "none";
             login_form.reset();
             register_form.reset();
+        }
+
+        function disconnect() {
+            sessionStorage.clear();
+            document.write("test")
         }
     </script>
 </body>
