@@ -1,6 +1,6 @@
 <?php
-$_SESSION['username'] = $row['pseudo'];
-header('Location: ../index.php');
+session_start();
+
 try {
     $db = new PDO('mysql:host=localhost;dbname=m2l;charset=utf8', 'root', '');
 } catch (Exception $e) {
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $_SESSION['user'] = $user;
             
-            header('Location: list.php');
+            header('Location: ../index.php');
             exit();
 
         } else {
