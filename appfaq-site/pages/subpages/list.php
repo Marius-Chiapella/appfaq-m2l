@@ -16,10 +16,10 @@ $dbh = connexion();
 
 // Liste des utilisateurs
 $sql = "select * from v_faq
-        WHERE pseudo = 'jef';";
+        WHERE pseudo = :user;";
 try {
     $sth = $dbh->prepare($sql);
-    $sth->execute();
+    $sth->execute(array(':user'=> $username));
     $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
     die("Erreur lors de la requête SQL : ".$ex->getMessage());
@@ -46,7 +46,7 @@ try {
     </tr>
     <?php
 foreach ($rows as $row) {
-    echo "<tr><td>".$row['id_user']."</td><td>".$row['pseudo']."</td><td>".$row['question']."</td><td>". $row['reponse'] ."</td></tr>";
+    echo "<tr><td>".$row['id_user']."</td><td>".$row['pseudo']."</td><td>".$row['question']."</td><td>". $row['reponse'] ."</td>";
 }
 ?>
   </table>
