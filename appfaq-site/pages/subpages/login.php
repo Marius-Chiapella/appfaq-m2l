@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+header('Location: ../index.php');
 try {
     $db = new PDO('mysql:host=localhost;dbname=m2l;charset=utf8', 'root', '');
 } catch (Exception $e) {

@@ -3,7 +3,7 @@ session_start();
 $titre = "Accueil";
 
 if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = null; // Non connecté
+    $_SESSION['username'] = null;
 }
 $username = $_SESSION['username'] ?? 'non connecté';
 ?>
