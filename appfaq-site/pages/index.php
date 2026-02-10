@@ -14,15 +14,15 @@ $titre = "Accueil";
 <body>
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
-        <a onclick="show_register()" id="register">S'inscrire</a>
-        <a onclick="show_login()" id ="login">Se connecter</a>
+        <a href="subpages/register.php" id="register">S'inscrire</a>
+        <a href="subpages/login.php" id ="login">Se connecter</a>
     </div>
 <div id="overlay" onclick="hideall()"></div>
     <div class="content">
         <h1><?= $titre ?></h1>
 
 
-        <div id="pop-up_form">
+<!--        <div id="pop-up_form">
 
             <form action="subpages/login.php" method="post" id="login_form">
                 <div class="inputs">
@@ -31,10 +31,10 @@ $titre = "Accueil";
 
                 </div>
 
-                <!-- <div class="inputs">
+                 <div class="inputs">
                     <label for="Email">Email</label> <br>
                     <input type="text" name="Email" id="email">
-                </div> -->
+                </div>
 
                 <div class="inputs">
                     <label for="password">Mot de passe</label> <br>
@@ -86,6 +86,7 @@ $titre = "Accueil";
         <p>placeholder</p>
     </div>
 
+-->
 <script>
 
     const login_form    = document.getElementById("login_form");
