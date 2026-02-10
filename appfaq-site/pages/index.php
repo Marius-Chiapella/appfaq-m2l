@@ -2,10 +2,11 @@
 session_start();
 $titre = "Accueil";
 
-if (!isset($_SESSION['username'])) {
-    $_SESSION['username'] = null; // Non connecté
+if (!isset($_SESSION['user'])) {
+    $_SESSION['user'] = null; // Non connecté
+} else {
+    $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 }
-$username = $_SESSION['username'] ?? 'non connecté';
 ?>
 
 <!DOCTYPE html>
@@ -22,19 +23,23 @@ $username = $_SESSION['username'] ?? 'non connecté';
 <body>
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
-        <?php if (!$username || $username === 'non connecté'): ?>
+        <?php if ($_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
-            <span>Bonjour, <?= htmlspecialchars($username) ?></span>
-            <a href="subpages/deconnexion.php">Se déconnecter</a>
+            <a href="<?php $_SESSION['user'] = null?>">Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
 
     <div class="content">
         <h1><?= $titre ?></h1>
-            <p>Utilisateur actuel : <?= htmlspecialchars($username) ?></p>
+            <?php
+            if (isset($username)) {
+                echo "<p>Utilisateur actuel : " . $username['pseudo']. "</p>";
+            }
+            ?>
+            
 
 <!--        <div id="pop-up_form">
 
