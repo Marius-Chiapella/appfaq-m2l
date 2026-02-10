@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $_SESSION['user'] = $user;
             
-            header('Location: list.php');
+            header('Location: ../index.php');
             exit();
 
         } else {
