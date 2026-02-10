@@ -1,8 +1,16 @@
 <?php
+session_start();
 $titre = "Accueil";
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['username'] = null; // Non connecté
+}
+$username = $_SESSION['username'] ?? 'non connecté';
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 
 <head>
     <meta charset="UTF-8">
@@ -14,15 +22,21 @@ $titre = "Accueil";
 <body>
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
-        <a onclick="show_register()" id="register">S'inscrire</a>
-        <a onclick="show_login()" id ="login">Se connecter</a>
+        <?php if (!$username || $username === 'non connecté'): ?>
+            <a href="subpages/register.php" id="register">S'inscrire</a>
+            <a href="subpages/login.php" id="login">Se connecter</a>
+        <?php else: ?>
+            <span>Bonjour, <?= htmlspecialchars($username) ?></span>
+            <a href="subpages/deconnexion.php">Se déconnecter</a>
+            <a href="subpages/liste.php">Liste des utilisateurs</a>
+        <?php endif; ?>
     </div>
-<div id="overlay" onclick="hideall()"></div>
+
     <div class="content">
         <h1><?= $titre ?></h1>
 
 
-        <div id="pop-up_form">
+<!--        <div id="pop-up_form">
 
             <form action="subpages/login.php" method="post" id="login_form">
                 <div class="inputs">
@@ -31,10 +45,10 @@ $titre = "Accueil";
 
                 </div>
 
-                <!-- <div class="inputs">
+                 <div class="inputs">
                     <label for="Email">Email</label> <br>
                     <input type="text" name="Email" id="email">
-                </div> -->
+                </div>
 
                 <div class="inputs">
                     <label for="password">Mot de passe</label> <br>
@@ -48,44 +62,36 @@ $titre = "Accueil";
 
             </form>
 
-                            <form action="subpages/register.php" method="post" id="register_form">
-                <div class="inputs">
-                    <label for="Pseudo">Pseudo</label> <br> 
-                    <input type="text" name="Pseudo" id="pseudo">
-
-                </div>
-
-                <div class="inputs">
-                    <label for="Email">Email</label> <br>
-                    <input type="text" name="Email" id="email">
-                </div>
-
-                <div class="inputs">
-                    <label for="Password">Mot de passe</label> <br>
-                    <input type="password" name="Password" id="password">
-                </div>
-                <div class="inputs">
-                    <label for="ligue">Ligue</label> <br>
-                    <select name="ligue" id="ligue">
-                        <option value="foot" selected>Football</option>
-                        <option value="basket">Basket</option>
-                        <option value="volley">Volleyball</option>
-                        <option value="rugby">Rugby</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="submit" value="Enregistrer" id="submit">
-                    <input type="reset" value="Annuler" id="reset" onclick="hideall()">
-                </div>
-
-            </form>
-        </div>
-
-    </div>
-    <div class="footer">
-        <p>placeholder</p>
+        <form action="subpages/register.php" method="post" id="register_form">
+            <div class="inputs">
+                <label for="Pseudo">Pseudo</label><br>
+                <input type="text" name="Pseudo" id="pseudo">
+            </div>
+            <div class="inputs">
+                <label for="Email">Email</label><br>
+                <input type="text" name="Email" id="email">
+            </div>
+            <div class="inputs">
+                <label for="Password">Mot de passe</label><br>
+                <input type="password" name="Password" id="password">
+            </div>
+            <div class="inputs">
+                <label for="ligue">Ligue</label><br>
+                <select name="ligue" id="ligue">
+                    <option value="foot" selected>Football</option>
+                    <option value="basket">Basket</option>
+                    <option value="volley">Volleyball</option>
+                    <option value="rugby">Rugby</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" value="Enregistrer" id="submit">
+                <input type="reset" value="Annuler" id="reset" onclick="hideall()">
+            </div>
+        </form>
     </div>
 
+-->
 <script>
 
     const login_form    = document.getElementById("login_form");
@@ -93,37 +99,32 @@ $titre = "Accueil";
     const popup_form    = document.getElementById("pop-up_form");
     const overlay       = document.getElementById("overlay");
 
-function default_show() {
-    popup_form.style.display        = "block";
-    overlay.style.display           = "block";
-}
+        function default_show() {
+            popup_form.style.display = "block";
+            overlay.style.display = "block";
+        }
 
-function show_login() {
-    register_form.style.display     = "none";
-    login_form.style.display        = "block";
-    default_show()
-}
+        function show_login() {
+            register_form.style.display = "none";
+            login_form.style.display = "block";
+            default_show();
+        }
 
+        function show_register() {
+            login_form.style.display = "none";
+            register_form.style.display = "block";
+            default_show();
+        }
 
-function show_register() {
-    login_form.style.display        = "none";
-    register_form.style.display     = "block";
-    default_show()
-
-
-}
-
-function hideall() {
-    login_form.style.display        = "none";
-    register_form.style.display     = "none";
-    popup_form.style.display        = "none";
-    overlay.style.display           = "none";
-    login_form.reset();
-    register_form.reset();
-}
-
-</script>
-
+        function hideall() {
+            login_form.style.display = "none";
+            register_form.style.display = "none";
+            popup_form.style.display = "none";
+            overlay.style.display = "none";
+            login_form.reset();
+            register_form.reset();
+        }
+    </script>
 </body>
 
 </html>
