@@ -88,31 +88,38 @@ $titre = "Accueil";
 
 <script>
 
+    const login_form    = document.getElementById("login_form");
+    const register_form = document.getElementById("register_form");
+    const popup_form    = document.getElementById("pop-up_form");
+    const overlay       = document.getElementById("overlay");
+
 function default_show() {
-    document.getElementById("pop-up_form").style.display    = "block";
-    document.getElementById("overlay").style.display        = "block";
+    popup_form.style.display        = "block";
+    overlay.style.display           = "block";
 }
 
 function show_login() {
-    document.getElementById("register_form").style.display  = "none";
-    document.getElementById("login_form").style.display     = "block";
+    register_form.style.display     = "none";
+    login_form.style.display        = "block";
     default_show()
 }
 
 
 function show_register() {
-    document.getElementById("login_form").style.display     = "none";
-    document.getElementById("register_form").style.display  = "block";
+    login_form.style.display        = "none";
+    register_form.style.display     = "block";
     default_show()
 
 
 }
 
 function hideall() {
-    document.getElementById("login_form").style.display     = "none";
-    document.getElementById("register_form").style.display  = "none";
-    document.getElementById("pop-up_form").style.display    = "none";
-    document.getElementById("overlay").style.display        = "none";
+    login_form.style.display        = "none";
+    register_form.style.display     = "none";
+    popup_form.style.display        = "none";
+    overlay.style.display           = "none";
+    login_form.reset();
+    register_form.reset();
 }
 
 </script>
