@@ -26,8 +26,8 @@ $titre = "Accueil";
 
             <form action="subpages/login.php" method="post" id="login_form">
                 <div class="inputs">
-                    <label for="Pseudo">Pseudo</label> <br> 
-                    <input type="text" name="Pseudo" id="pseudo">
+                    <label for="user">Pseudo</label> <br> 
+                    <input type="text" name="user" id="pseudo">
 
                 </div>
 
@@ -37,8 +37,8 @@ $titre = "Accueil";
                 </div> -->
 
                 <div class="inputs">
-                    <label for="Password">Mot de passe</label> <br>
-                    <input type="password" name="Password" id="password">
+                    <label for="password">Mot de passe</label> <br>
+                    <input type="password" name="password" id="password">
                 </div>
 
                 <div>

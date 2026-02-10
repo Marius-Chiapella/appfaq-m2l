@@ -21,7 +21,7 @@ $titre = "Template";
 
     <div class="content">
         <h1><?= $titre ?></h1>
-
+        <a href="appfaq-site/pages/index.php">Accueil</a>
     </div>
 
     <div class="footer">
