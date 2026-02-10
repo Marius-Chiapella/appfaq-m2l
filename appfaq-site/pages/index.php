@@ -17,7 +17,7 @@ $titre = "Accueil";
         <a onclick="show_register()" id="register">S'inscrire</a>
         <a onclick="show_login()" id ="login">Se connecter</a>
     </div>
-<div id="overlay"></div>
+<div id="overlay" onclick="hideall()"></div>
     <div class="content">
         <h1><?= $titre ?></h1>
 
