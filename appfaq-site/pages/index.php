@@ -23,8 +23,8 @@ $username = $_SESSION['username'] ?? 'non connecté';
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
         <?php if (!$username || $username === 'non connecté'): ?>
-            <a onclick="show_register()" id="register">S'inscrire</a>
-            <a onclick="show_login()" id="login">Se connecter</a>
+            <a href="subpages/register.php" id="register">S'inscrire</a>
+            <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
             <span>Bonjour, <?= htmlspecialchars($username) ?></span>
             <a href="subpages/deconnexion.php">Se déconnecter</a>
