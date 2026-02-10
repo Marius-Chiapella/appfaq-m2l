@@ -23,8 +23,8 @@ $username = $_SESSION['username'] ?? 'non connecté';
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
         <?php if (!$username || $username === 'non connecté'): ?>
-            <a onclick="show_register()" id="register">S'inscrire</a>
-            <a onclick="show_login()" id="login">Se connecter</a>
+            <a href="subpages/register.php" id="register">S'inscrire</a>
+            <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
             <span>Bonjour, <?= htmlspecialchars($username) ?></span>
             <a href="subpages/deconnexion.php">Se déconnecter</a>
@@ -34,30 +34,33 @@ $username = $_SESSION['username'] ?? 'non connecté';
 
     <div class="content">
         <h1><?= $titre ?></h1>
-        <p>Utilisateur actuel : <?= htmlspecialchars($username) ?></p>
-    </div>
 
-    <div class="footer">
-        <p>placeholder</p>
-    </div>
 
-    
-    <div id="overlay" onclick="hideall()"></div>
-    <div id="pop-up_form">
-        <form action="subpages/login.php" method="post" id="login_form">
-            <div class="inputs">
-                <label for="user">Pseudo</label><br>
-                <input type="text" name="user" id="pseudo">
-            </div>
-            <div class="inputs">
-                <label for="password">Mot de passe</label><br>
-                <input type="password" name="password" id="password">
-            </div>
-            <div>
-                <input type="submit" value="Enregistrer" id="submit">
-                <input type="reset" value="Annuler" id="reset" onclick="hideall()">
-            </div>
-        </form>
+<!--        <div id="pop-up_form">
+
+            <form action="subpages/login.php" method="post" id="login_form">
+                <div class="inputs">
+                    <label for="user">Pseudo</label> <br> 
+                    <input type="text" name="user" id="pseudo">
+
+                </div>
+
+                 <div class="inputs">
+                    <label for="Email">Email</label> <br>
+                    <input type="text" name="Email" id="email">
+                </div>
+
+                <div class="inputs">
+                    <label for="password">Mot de passe</label> <br>
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div>
+                    <input type="submit" value="Enregistrer" id="submit">
+                    <input type="reset" value="Annuler" id="reset" onclick="hideall()">
+                </div>
+
+            </form>
 
         <form action="subpages/register.php" method="post" id="register_form">
             <div class="inputs">
@@ -88,11 +91,13 @@ $username = $_SESSION['username'] ?? 'non connecté';
         </form>
     </div>
 
-    <script>
-        const login_form = document.getElementById("login_form");
-        const register_form = document.getElementById("register_form");
-        const popup_form = document.getElementById("pop-up_form");
-        const overlay = document.getElementById("overlay");
+-->
+<script>
+
+    const login_form    = document.getElementById("login_form");
+    const register_form = document.getElementById("register_form");
+    const popup_form    = document.getElementById("pop-up_form");
+    const overlay       = document.getElementById("overlay");
 
         function default_show() {
             popup_form.style.display = "block";

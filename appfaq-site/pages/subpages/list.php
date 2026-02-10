@@ -3,12 +3,12 @@ include "fonctions.inc.php";
 session_start();
 
 // Redirige vers la page de connexion si on n'est pas connecté
-if (isset($_SESSION['username'])) {
+if (!isset($_SESSION['user'])) {
     header("Location: ../index.php");
     exit();
 } else {
-    // $username = $_SESSION['username'];
-    $username = "jef";
+    $username = $_SESSION['user'];
+    // $username = "jef";
 }
 
 // Connexion à la base de données
@@ -54,6 +54,7 @@ foreach ($rows as $row) {
 <a href="page/add.php">Page add</a> <br>
 <a href="page/edit.php">Page edit</a> <br>
 <a href="page/delete.php">Page delete</a> <br>
+<a href="../index.php">Page d'accueil</a> <br>
 
 </body>
 </html>
