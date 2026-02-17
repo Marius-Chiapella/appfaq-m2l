@@ -1,36 +1,35 @@
 <?php
 session_start();
 
+// 1. Connexion BDD (Version compacte)
 try {
     $db = new PDO('mysql:host=localhost;dbname=m2l;charset=utf8', 'root', '');
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+} catch (Exception $e) { die('Erreur : ' . $e->getMessage()); }
+
+// 2. Traitement du formulaire
+$error = null; // On initialise la variable
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     $login = trim($_POST['login'] ?? '');
-    $password = $_POST['password'] ?? ''; 
+    $pass  = $_POST['password'] ?? '';
 
-    if (!empty($login) && !empty($password)) {
+    // Vérification simplifiée : si login OU pass est vide, c'est une erreur
+    if (!$login || !$pass) {
+        $error = "Veuillez remplir tous les champs.";
+    } else {
+        // Requête SQL
+        $stmt = $db->prepare("SELECT * FROM user WHERE pseudo = ?");
+        $stmt->execute([$login]);
+        $user = $stmt->fetch();
 
-        
-        $query = $db->prepare("SELECT * FROM user WHERE pseudo = :login");
-        $query->execute(['login' => $login]);
-        $user = $query->fetch();
-        /*print_r($user);exit();*/
-        if ($user && password_verify($password, $user['mdp'])) { 
-            
+        // Vérification du mot de passe
+        if ($user && password_verify($pass, $user['mdp'])) {
             $_SESSION['user'] = $user;
-            
             header('Location: ../index.php');
             exit();
-
         } else {
             $error = "Identifiants invalides. Veuillez recommencer.";
         }
-    } else {
-        $error = "Veuillez remplir tous les champs.";
     }
 }
 ?>
@@ -45,14 +44,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h2>Connexion</h2>
 
-    <?php if (isset($error)): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
+    <?php if ($error): ?>
+        <p style="color: red;"><?= $error ?></p>
     <?php endif; ?>
 
-    <form method="POST" action="">
+    <form method="POST">
         <div>
             <label>Pseudo / Login :</label>
-            <input type="text" name="login" required>
+            <input type="text" name="login" required value="<?= htmlspecialchars($login ?? '') ?>">
         </div>
         <div>
             <label>Mot de passe :</label>
@@ -62,5 +61,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 </body>
 </html>
-
-
