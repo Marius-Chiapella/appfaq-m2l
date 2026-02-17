@@ -28,7 +28,6 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
-    <button onclick="disconnect()">Test</button>
     <div class="content">
         <h1><?= $titre ?></h1>
             <?php
