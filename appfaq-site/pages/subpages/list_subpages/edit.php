@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'confitest.php'; // On utilise ton fichier de connexion habituel
+require_once 'fonctions.inc.php';; // On utilise ton fichier de connexion habituel
 
 // --- MODE TEST ---
 $_SESSION['id_user'] = 1;      // Simule un utilisateur connecté

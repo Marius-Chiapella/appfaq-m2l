@@ -1,12 +1,12 @@
 <?php
-require_once 'confitest.php';
+require_once 'fonctions.inc.php';
 session_start();
 
 // Mode test : on force l'utilisateur jef
 $username = "jef";
 
 // Connexion à la base de données (utilisation de l'objet $pdo de confitest.php)
-$dbh = $pdo;
+$pdo = connexion();
 
 // Récupération des FAQ
 $sql = "SELECT id_faq, pseudo, question, reponse FROM v_faq WHERE pseudo = :user";

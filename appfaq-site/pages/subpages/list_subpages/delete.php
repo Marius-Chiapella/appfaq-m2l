@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'confitest.php';
+require_once 'fonctions.inc.php';
 
 // 1) Vérifier connexion
 /*if (empty($_SESSION['id_user'])) {
