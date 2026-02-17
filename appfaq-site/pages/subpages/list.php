@@ -1,6 +1,7 @@
 <?php
 include "fonctions.inc.php";
 session_start();
+print_r($_SESSION);
 $titre = "Liste";
 
 // Redirige vers la page de connexion si on n'est pas connecté
@@ -40,7 +41,8 @@ try {
 <body>
   <div class="barre_haute">
     <h2>AppFaq - M2L</h2>
-    <a href="#" onclick="disconnect()">Se déconnecter</a>
+    <a href="<?php $_SERVER['PHP_SELF'];
+    session_unset() ?>">Se déconnecter</a>
     <a href="../index.php">Accueil</a>
   </div>
 
@@ -68,12 +70,6 @@ try {
   <div class="footer">
     <p>placeholder</p>
   </div>
-
-
-        function disconnect() {
-            sessionStorage.clear();
-        }
-</script>
 
 </body>
 
