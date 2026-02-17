@@ -40,9 +40,8 @@ try {
 <body>
   <div class="barre_haute">
     <h2>AppFaq - M2L</h2>
+    <a href="#" onclick="disconnect()">Se déconnecter</a>
     <a href="../index.php">Accueil</a>
-    <a href="#">Link</a>
-    <a href="#">Link</a>
   </div>
 
   <div class="content">
@@ -74,6 +73,9 @@ try {
 
 <script>
 
+        function disconnect() {
+            sessionStorage.clear();
+        }
 </script>
 
 </body>
