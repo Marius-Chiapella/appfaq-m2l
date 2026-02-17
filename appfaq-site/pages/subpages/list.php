@@ -1,9 +1,7 @@
 <?php
 include "fonctions.inc.php";
 session_start();
-print_r($_SESSION);
 $titre = "Liste";
-
 // Redirige vers la page de connexion si on n'est pas connecté
 if (!isset($_SESSION['user'])) {
   header("Location: ../index.php");
@@ -41,8 +39,7 @@ try {
 <body>
   <div class="barre_haute">
     <h2>AppFaq - M2L</h2>
-    <a href="<?php $_SERVER['PHP_SELF'];
-    session_unset() ?>">Se déconnecter</a>
+    <a href="disconnect.php">Se déconnecter</a>
     <a href="../index.php">Accueil</a>
   </div>
 

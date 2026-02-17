@@ -23,8 +23,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
-            <a href="<?php $_SERVER['PHP_SELF'];
-    session_unset() ?>">Se déconnecter</a>
+            <a href="subpages/disconnect.php">Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
@@ -131,9 +130,6 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             register_form.reset();
         }
 
-        function disconnect() {
-            sessionStorage.clear();
-        }
     </script>
 </body>
 
