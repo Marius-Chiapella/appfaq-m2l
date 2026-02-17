@@ -1,7 +1,6 @@
 <?php
 session_start();
 $titre = "Accueil";
-
 $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
 ?>
