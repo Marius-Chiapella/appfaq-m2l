@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<p>Revenir a l'<a href="index.php">accueil</a></p>
+<p>Revenir a l'<a href="../index.php">accueil</a></p>
 
 </body>
 </html>
