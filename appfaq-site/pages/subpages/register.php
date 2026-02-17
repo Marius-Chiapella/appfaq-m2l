@@ -73,5 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_close($conn);
 }
 ?>
+
+<p>Revenir a l'<a href="index.php">accueil</a></p>
+
 </body>
 </html>
