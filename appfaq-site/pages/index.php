@@ -1,12 +1,8 @@
 <?php
 session_start();
 $titre = "Accueil";
+$username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
-if (!isset($_SESSION['user'])) {
-    $_SESSION['user'] = null; // Non connecté
-} else {
-    $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
-}
 ?>
 
 <!DOCTYPE html>
@@ -23,22 +19,25 @@ if (!isset($_SESSION['user'])) {
 <body>
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
-        <?php if ($_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
+        <?php if (!isset($_SESSION['user'])||$_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
-            <a href="<?php $_SESSION['user'] = null?>">Se déconnecter</a>
+            <a onclick=disconnect()>Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
-
     <div class="content">
         <h1><?= $titre ?></h1>
             <?php
             if (isset($username)) {
                 echo "<p>Utilisateur actuel : " . $username['pseudo']. "</p>";
+
+                echo "<a href='subpages/list.php'> aller sur la liste</a>";
+            } else {
+                echo "<p> Utilisateur deconnecté";
             }
-            ?>
+            ?>  
             
 
 <!--        <div id="pop-up_form">
@@ -129,6 +128,10 @@ if (!isset($_SESSION['user'])) {
             overlay.style.display = "none";
             login_form.reset();
             register_form.reset();
+        }
+
+        function disconnect() {
+            sessionStorage.clear();
         }
     </script>
 </body>

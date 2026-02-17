@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('../../css/main.css');
 /* Template CSS */
 
 table, th, td {
@@ -8,10 +9,6 @@ table, th, td {
   border-collapse: collapse;
 }
 
-body {
-  margin-left:20px;
-  font-family: Verdana, Geneva, sans-serif;
-}
 
 th,td {
   font-family: Verdana, Geneva, sans-serif;

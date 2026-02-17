@@ -1,7 +1,6 @@
 <?php
-session_start();
 require 'confitest.php';//faut mettre le nom du php qui correspond pour que sa marche
-
+session_start();
 // 1) Vérifier connexion
 if (empty($_SESSION['id_user'])) {
     header('Location: login.php');
