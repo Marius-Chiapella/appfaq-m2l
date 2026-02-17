@@ -40,7 +40,7 @@ try {
 <body>
   <div class="barre_haute">
     <h2>AppFaq - M2L</h2>
-    <a href="#">Link</a>
+    <a href="../index.php">Accueil</a>
     <a href="#">Link</a>
     <a href="#">Link</a>
   </div>
@@ -66,14 +66,15 @@ try {
     <a href="page/add.php">Page add</a> <br>
     <a href="page/edit.php">Page edit</a> <br>
     <a href="page/delete.php">Page delete</a> <br>
-    <a href="../index.php">Page d'accueil</a> <br>
-
-    <a href="appfaq-site/pages/index.php">Accueil</a>
   </div>
 
   <div class="footer">
     <p>placeholder</p>
   </div>
+
+<script>
+
+</script>
 
 </body>
 
