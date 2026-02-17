@@ -60,8 +60,8 @@ try {
                             <td><?= htmlspecialchars($row['question']) ?></td>
                             <td><?= htmlspecialchars($row['reponse']) ?></td>
                             <td style="text-align: center;">
-                                <a href="page/edit.php?id=<?= $row['id_faq'] ?>" title="Modifier" style="text-decoration:none;">📝</a>
-                                <a href="page/delete.php?id=<?= $row['id_faq'] ?>" 
+                                <a href="list_subpages/edit.php?id=<?= $row['id_faq'] ?>" title="Modifier" style="text-decoration:none;">📝</a>
+                                <a href="list_subpages/delete.php?id=<?= $row['id_faq'] ?>" 
                                    title="Supprimer" 
                                    style="text-decoration:none;"
                                    onclick="return confirm('Voulez-vous vraiment supprimer cette question ?');">
