@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $titre = "Accueil";
 
 $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
@@ -25,11 +24,11 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
-            <a onclick="disconnect()">Se déconnecter</a>
+            <a onclick=disconnect()>Se déconnecter</a>
             <a href="subpages/liste.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
-
+    <button onclick="disconnect()">Test</button>
     <div class="content">
         <h1><?= $titre ?></h1>
             <?php
@@ -135,7 +134,6 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
         function disconnect() {
             sessionStorage.clear();
-            document.write("test")
         }
     </script>
 </body>
