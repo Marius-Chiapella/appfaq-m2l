@@ -29,6 +29,15 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
     </div>
     <div class="content">
         <h1><?= $titre ?></h1>
+
+        <h2>Bienvenue sur le site de la M2L !!</h2>
+        <h4>Les ligues :</h4>
+        <ul>
+            <li>Football</li>
+            <li>Basketball</li>
+            <li>Rugby</li>
+            <li>Volleyball</li>
+        </ul>
             <?php
             if (isset($username)) {
                 echo "<p>Utilisateur actuel : " . $username['pseudo']. "</p>";
