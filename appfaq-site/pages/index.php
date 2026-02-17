@@ -1,8 +1,5 @@
 <?php
 session_start();
-echo "<pre>";  
-print_r($_SESSION);
-echo "</pre>";
 
 $titre = "Accueil";
 
@@ -24,7 +21,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 <body>
     <div class="barre_haute">
         <h2>AppFaq - M2L</h2>
-        <?php if ($_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
+        <?php if (!isset($_SESSION['user'])||$_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
@@ -43,7 +40,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             } else {
                 echo "<p> Utilisateur deconnecté";
             }
-            ?>
+            ?>  
             
 
 <!--        <div id="pop-up_form">
