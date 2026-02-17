@@ -12,7 +12,7 @@ $pdo = connexion();
 $sql = "SELECT id_faq, pseudo, question, reponse FROM v_faq WHERE pseudo = :user";
 
 try {
-    $sth = $dbh->prepare($sql);
+    $sth = $pdo->prepare($sql);
     $sth->execute(array(':user' => $username));
     $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
