@@ -3,6 +3,14 @@
 _Projet M2L SLAM_
 réaliser un site pour la maison des ligues de lorainne selon un cahier des charges défini, suivant une logique "en mode projet" avec repartition des tâches
 
+***
+
+# __IMPORTANT__
+<h4>
+LES PAGES LOGIN ET REGISTER SONT TEMPORAIRE ET DONC NON STYLISEE CAR VONT ETRE TRANSFORMEE EN POPUP PAR LA SUITE</h4>
+
+***
+
 **<u>Durée</u>** : du **27/01/2026** au **xx/xx/2026**
 
 ***
