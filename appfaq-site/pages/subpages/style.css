@@ -38,3 +38,7 @@ tr.impair {
    background-color: #EDEDED;/* gris clair */
    color: black;
 }
+
+#add {
+   display : none;
+}
