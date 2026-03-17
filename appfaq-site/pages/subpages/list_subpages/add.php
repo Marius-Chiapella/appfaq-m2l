@@ -33,7 +33,7 @@ if ($submit) {
         $stmt->execute([
             ':question' => $question,
             ':dat_question' => $now,
-            ':id_user' => $_SESSION['id_user'],
+            ':id_user' => $_SESSION['user']['id_user'],
         ]);
 
         header('Location: ../list.php');
