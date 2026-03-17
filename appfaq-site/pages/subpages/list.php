@@ -26,45 +26,67 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>ProjetM2L</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetM2L</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css"> 
 </head>
-
 <body>
-  <div class="barre_haute">
-    <h2>AppFaq - M2L</h2>
-    <a href="disconnect.php">Se déconnecter</a>
-    <a href="../index.php">Accueil</a>
-  </div>
 
-  <div class="content">
-    <h1><?= $titre ?></h1>
-    <h1>M2L-list</h1>
-    <p>User : <?= $_SESSION['user']['pseudo'] ?></p>
-    <table>
-      <tr>
-        <th>NR</th>
-        <th>Auteur</th>
-        <th>Question</th>
-        <th>Réponse</th>
-      </tr>
-      <?php
-      foreach ($rows as $row) {
-        echo "<tr><td>" . $row['id_user'] . "</td><td>" . $row['pseudo'] . "</td><td>" . $row['question'] . "</td><td>" . $row['reponse'] . "</td>";
-      }
-      ?>
-    </table>
-    </table>
-    <a href="list_subpages/add.php">Page add</a> <br>
-  </div>
+    <div class="barre_haute ">
+        <h2>AppFaq - M2L</h2>
+        <a href="disconnect.php">Se déconnecter</a>
+        <a href="../index.php">Accueil</a>
+    </div>
 
-  <div class="footer">
-    <p>placeholder</p>
-  </div>
+    <div class="content">
+        <h1>M2L-list</h1>
+        <p>Utilisateur : <strong><?= htmlspecialchars($username) ?></strong></p>
+
+        <table border="1" style="width:100%; border-collapse: collapse; background-color: white;">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Auteur</th>
+                    <th>Question</th>
+                    <th>Réponse</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php if (count($rows) > 0): ?>
+                    <?php foreach ($rows as $row): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($row['id_faq']) ?></td>
+                            <td><?= htmlspecialchars($row['pseudo']) ?></td>
+                            <td><?= htmlspecialchars($row['question']) ?></td>
+                            <td><?= htmlspecialchars($row['reponse']) ?></td>
+                            <td style="text-align: center;">
+                                <a href="list_subpages/edit.php?id=<?= $row['id_faq'] ?>" title="Modifier" style="text-decoration:none;">📝</a>
+                                <a href="list_subpages/delete.php?id=<?= $row['id_faq'] ?>" 
+                                   title="Supprimer" 
+                                   style="text-decoration:none;"
+                                   onclick="return confirm('Voulez-vous vraiment supprimer cette question ?');">
+                                   🗑️
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <tr>
+                        <td colspan="5" style="text-align:center;">Aucune donnée disponible.</td>
+                    </tr>
+                <?php endif; ?>
+            </tbody>
+        </table>
+        <a href="list_subpages/add.php">Page add</a> <br>
+    </div>
+
+    <div class="footer">
+        Maison des Ligues - Tous droits réservés 2026
+    </div>
 
 </body>
 
