@@ -35,8 +35,8 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
         <ul>
             <li>Football</li>
             <li>Basketball</li>
-            <li>Rugby</li>
             <li>Volleyball</li>
+            <li>Handball</li>
         </ul>
             <?php
             if (isset($username)) {
