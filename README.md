@@ -85,7 +85,12 @@ main
                       delete.php
                       edit.php
 ```
- <ins>utilisateurs d'essais fournis</ins> : _à créer_ <br>
+ <ins>utilisateurs d'essais fournis</ins> : <br>
+ Jef : Jef <br>
+ Superman : Superman (super-admin) <br>
+ basketman : basketman <br>
+ volleyman : volleyman <br>
+ handballman : handballman <br>
 
 
 ***
