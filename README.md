@@ -86,8 +86,8 @@ main
                       edit.php
 ```
  <ins>utilisateurs d'essais fournis</ins> : <br>
- Jef : Jef <br>
- Superman : Superman (super-admin) <br>
+ Jef : jef <br>
+ Superman : superman (super-admin) <br>
  basketman : basketman <br>
  volleyman : volleyman <br>
  handballman : handballman <br>
