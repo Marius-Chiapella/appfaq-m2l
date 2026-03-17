@@ -3,15 +3,16 @@ include "fonctions.inc.php";
 session_start();
 $titre = "Liste";
 $admin = $_SESSION['user']['id_usertype'] == 3 ? True : False;
-// Redirige vers la page de connexion si on n'est pas connecté
+
+// 1) Vérification connexion
 if (!isset($_SESSION['user'])) {
-  header("Location: ../index.php");
-  exit();
+    header("Location: ../index.php");
+    exit();
 } else {
-  $id = strval($_SESSION['user']['id_user']);
+    $id = strval($_SESSION['user']['id_user']);
 }
 
-// Connexion à la base de données
+// 2) Connexion à la base de données
 $dbh = connexion();
 // Liste des utilisateurs
 if(!$admin) {
@@ -27,19 +28,18 @@ try {
   $sth->execute(array(':id' => $ligue));
   $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
-  die("Erreur lors de la requête SQL : " . $ex->getMessage());
+    die("Erreur lors de la requête SQL : " . $ex->getMessage());
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ProjetM2L</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetM2L - <?= $titre ?></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css"> 
 </head>
 
 <body>
@@ -84,10 +84,9 @@ try {
     <a href="list_subpages/add.php">Page add</a> <br>
   </div>
 
-  <div class="footer">
-    <p>Copyright : Théliau, Anthony, Marius, Liam</p>
-  </div>
+    <div class="footer">
+        <p>Copyright © : Théliau, Anthony, Marius, Liam - 2026</p>
+    </div>
 
 </body>
-
 </html>
