@@ -1,20 +1,14 @@
 <?php
+//Lancement de la session et values de base
 session_start();
 require_once '../fonctions.inc.php';
 $titre = "Ajouter page";
 $pdo = connexion();
 $submit = isset($_POST['submit']);
 
-$_SESSION['id_user'] = 1;
-$_SESSION['id_usertype'] = 3;
-$username = "jef";
+$username = $_SESSION['user']['pseudo'];
 
-if (($_SESSION['id_user']) == '') {
-    header('Location: ../../index.php');
-    exit;
-}
-
-$id_usertype = $_SESSION['id_usertype'] ?? null;
+$id_usertype = $_SESSION['user']['id_usertype'] ?? null;
 if ($id_usertype == null) {
     die("Accès refusé : droits insuffisants.");
 }
