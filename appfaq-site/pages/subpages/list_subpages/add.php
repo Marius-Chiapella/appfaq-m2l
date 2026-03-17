@@ -80,7 +80,7 @@ if ($submit) {
     </div>
 
     <div class="footer">
-        <p>placeholder</p>
+        <p>Copyright : Théliau, Anthony, Marius, Liam</p>
     </div>
 
 </body>

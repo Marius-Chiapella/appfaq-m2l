@@ -24,7 +24,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
             <a href="subpages/disconnect.php">Se déconnecter</a>
-            <a href="subpages/liste.php">Liste des utilisateurs</a>
+            <a href="subpages/list.php">Liste des utilisateurs</a>
         <?php endif; ?>
     </div>
     <div class="content">

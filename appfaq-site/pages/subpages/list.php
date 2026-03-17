@@ -84,9 +84,9 @@ try {
         <a href="list_subpages/add.php">Page add</a> <br>
     </div>
 
-    <div class="footer">
-        Maison des Ligues - Tous droits réservés 2026
-    </div>
+  <div class="footer">
+    <p>Copyright : Théliau, Anthony, Marius, Liam</p>
+  </div>
 
 </body>
 
