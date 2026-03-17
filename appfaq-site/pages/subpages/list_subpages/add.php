@@ -58,16 +58,14 @@ if ($submit) {
 </head>
 
 <body>
-    <div class="barre_haute">
-        <h2>AppFaq - M2L</h2>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-        <a href="#">Link</a>
-    </div>
+  <div class="barre_haute">
+    <h2>AppFaq - M2L</h2>
+    <a href="disconnect.php">Se déconnecter</a>
+    <a href="../index.php">Accueil</a>
+  </div>
 
     <div class="content">
         <h1><?= $titre ?></h1>
-        <a href="../../index.php">Accueil</a> <br> <br> <br>
 
         <?php if (isset($error)):
            echo "<p> $error </p>";
