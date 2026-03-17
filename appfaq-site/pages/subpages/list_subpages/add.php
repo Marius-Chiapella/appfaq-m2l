@@ -77,7 +77,7 @@ if ($submit) {
             <textarea name="question" id="question" cols="100" rows="20" style="resize: none;"></textarea>
             <br><br>
             <input type="submit" name='submit' value="Ajouter">
-            <input type="button" name='annuler' value="Annuler">
+            <input type="button" name='annuler' onclick="window.location.href='../list.php'" value="Annuler">
         </form>
     </div>
 
