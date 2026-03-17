@@ -7,19 +7,17 @@ if (!isset($_SESSION['user'])) {
   header("Location: ../index.php");
   exit();
 } else {
-  // $username = strval($_SESSION['user']);
-  $username = "jef";
+  $id = strval($_SESSION['user']['id_user']);
 }
 
 // Connexion à la base de données
 $dbh = connexion();
-
 // Liste des utilisateurs
 $sql = "select * from v_faq
-        WHERE pseudo = :user;";
+        WHERE id_user = :id;";
 try {
   $sth = $dbh->prepare($sql);
-  $sth->execute(array(':user' => $username));
+  $sth->execute(array(':id' => $id));
   $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
   die("Erreur lors de la requête SQL : " . $ex->getMessage());
@@ -46,7 +44,7 @@ try {
   <div class="content">
     <h1><?= $titre ?></h1>
     <h1>M2L-list</h1>
-    <p>User : <?= $username ?></p>
+    <p>User : <?= $_SESSION['user']['pseudo'] ?></p>
     <table>
       <tr>
         <th>NR</th>
