@@ -52,7 +52,7 @@ try {
   <div class="content">
     <h1><?= $titre ?></h1>
     <h1>M2L-list</h1>
-    <p>User : <?= $_SESSION['user']['pseudo'] ?></p>
+    <p>Utilisateur : <?= $_SESSION['user']['pseudo'] ?></p>
     <?php
     if (empty($rows)) {
       echo "<p> Il n'y a aucun message pour l'instant !";
@@ -81,7 +81,7 @@ try {
     }
     ?>
     <br> <br>
-    <a href="list_subpages/add.php">Page add</a> <br>
+    <a href="list_subpages/add.php">Ajouter un message</a> <br>
   </div>
 
     <div class="footer">
