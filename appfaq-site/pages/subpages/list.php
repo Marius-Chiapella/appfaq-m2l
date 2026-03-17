@@ -2,7 +2,8 @@
 include "fonctions.inc.php";
 session_start();
 $titre = "Liste";
-$admin = $_SESSION['user']['id_usertype'] == 3 ? True : False;
+$admin = $_SESSION['user']['id_usertype'] == 2 ? True : False;
+$sup_admin = $_SESSION['user']['id_usertype'] == 3 ? True : False;
 
 // 1) Vérification connexion
 if (!isset($_SESSION['user'])) {
@@ -15,7 +16,7 @@ if (!isset($_SESSION['user'])) {
 // 2) Connexion à la base de données
 $dbh = connexion();
 // Liste des utilisateurs
-if(!$admin) {
+if(!$sup_admin) {
   $sql = "SELECT * FROM v_faq
         WHERE id_ligue = :id;";
 } else {
@@ -64,7 +65,7 @@ try {
         <th> Ligue</th>
         <th>Question</th>
         <th>Réponse</th>";
-      if ($admin) {
+      if ($admin || $sup_admin) {
         echo "<th> Actions </th>
             </tr>";
       } else {
@@ -72,7 +73,7 @@ try {
       }
       foreach ($rows as $row) {
         echo "<tr><td>" . $row['id_user'] . "</td><td>" . $row['pseudo'] . "</td><td>" . $row['lib_ligue'] . "</td><td>" . $row['question'] . "</td><td>" . $row['reponse'] . "</td>";
-        if ($admin) {
+        if ($admin || $sup_admin) {
           echo "<td><a href='list_subpages/edit.php?id=" . $row['id_faq'] . "' title='Modifier' style='text-decoration:none;'>📝</a>
                 <a href='list_subpages/delete.php?id=" . $row['id_faq'] . "' title='Supprimer' style='text-decoration:none;'onclick='return confirm('Voulez-vous vraiment supprimer cette question ?');'>🗑️</a></td>";
         }
