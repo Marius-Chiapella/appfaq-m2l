@@ -26,39 +26,43 @@ try {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>ProjetM2L</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetM2L</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css"> 
 </head>
-
 <body>
-  <div class="barre_haute">
-    <h2>AppFaq - M2L</h2>
-    <a href="disconnect.php">Se déconnecter</a>
-    <a href="../index.php">Accueil</a>
-  </div>
+
+    <div class="barre_haute ">
+        <h2>AppFaq - M2L</h2>
+        <a href="disconnect.php">Se déconnecter</a>
+        <a href="../index.php">Accueil</a>
+    </div>
 
   <div class="content">
     <h1><?= $titre ?></h1>
     <h1>M2L-list</h1>
     <p>User : <?= $_SESSION['user']['pseudo'] ?></p>
-    <table>
+    <?php
+    if (empty($rows)) {
+      echo "<p> Vous n'avez aucun message pour l'instant !";
+    } else {
+      echo "<table>
       <tr>
         <th>NR</th>
         <th>Auteur</th>
         <th>Question</th>
         <th>Réponse</th>
-      </tr>
-      <?php
+      </tr>";
       foreach ($rows as $row) {
         echo "<tr><td>" . $row['id_user'] . "</td><td>" . $row['pseudo'] . "</td><td>" . $row['question'] . "</td><td>" . $row['reponse'] . "</td>";
       }
-      ?>
-    </table>
-    </table>
+      echo "</table>";
+    }
+    ?>
+    <br> <br>
     <a href="list_subpages/add.php">Page add</a> <br>
   </div>
 
