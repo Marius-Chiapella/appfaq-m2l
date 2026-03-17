@@ -1,33 +1,31 @@
 <?php
 session_start();
-require_once '../fonctions.inc.php';; // On utilise ton fichier de connexion habituel
+require_once '../fonctions.inc.php'; // On charge tes fonctions
 
-// --- MODE TEST ---
-$_SESSION['id_user'] = 1;      // Simule un utilisateur connecté
-$_SESSION['id_usertype'] = 3;  // Simule les droits de "jef"
-$username = "jef";             // Pour l'affichage
-// -----------------
-
-// 1) Vérifier connexion
-if (empty($_SESSION['id_user'])) {
-    header('Location: ../index.php');
-    exit;
+// 1) Vérification connexion
+if (!isset($_SESSION['user'])) {
+    header("Location: ../../index.php");
+    exit();
 }
 
-// 2) Vérifier rôle
-$id_usertype = $_SESSION['id_usertype'] ?? null;
+// 2) Initialisation de la connexion (C'est ici que l'erreur se règle)
+$pdo = connexion(); 
+
+// 3) Vérifier rôle (On utilise la structure de ton Code 1 : $_SESSION['user'])
+$id_usertype = $_SESSION['user']['id_usertype'] ?? null;
+
 if ($id_usertype === null || !in_array((int)$id_usertype, [2, 3], true)) {
     http_response_code(403);
     die("Accès refusé : droits insuffisants.");
 }
 
-// 3) Récupérer l'ID de la FAQ
+// 4) Récupérer l'ID de la FAQ
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID invalide.");
 }
 $id_faq = (int)$_GET['id'];
 
-// 4) Charger la FAQ à éditer (Table 'faq' d'après ta BDD)
+// 5) Charger la FAQ à éditer
 $sql = "SELECT id_faq, question, reponse, id_user FROM faq WHERE id_faq = :id_faq";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([':id_faq' => $id_faq]);
@@ -37,11 +35,11 @@ if (!$faq) {
     die("FAQ introuvable.");
 }
 
-// 5) Traitement du formulaire
+// 6) Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['annuler'])) {
-        header('Location: ../listtestbutton.php');
+        header('Location: ../list.php'); // Redirige vers ta page de liste
         exit;
     }
 
@@ -53,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $now = date('Y-m-d H:i:s');
 
-        // On met à jour la table 'faq'
         $updateSql = "UPDATE faq 
                       SET question = :question, 
                           reponse = :reponse, 
@@ -68,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':id_faq'      => $id_faq,
         ]);
 
-        header('Location: ../listtestbutton.php');
+        header('Location: ../list.php'); // Redirige vers ta page de liste
         exit;
     }
 }
@@ -79,13 +76,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../main.css">
     <title>M2L - Modifier FAQ</title>
 </head>
 <body>
 
     <div class="barre_haute">
         <h2>M2L - Modification</h2>
-        <a href="../listtestbutton.php">Retour Liste</a>
+        <a href="../list.php">Retour Liste</a>
     </div>
 
     <div class="content">
@@ -116,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <div class="footer">
-        Maison des Ligues - Administration
+        <p>Copyright © : Théliau, Anthony, Marius, Liam - 2026</p>
     </div>
 
 </body>

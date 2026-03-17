@@ -2,13 +2,12 @@
 require_once '../fonctions.inc.php';
 session_start();
 
-// 1) Vérifier connexion
-/*if (empty($_SESSION['id_user'])) {
-    header('Location: login.php');
-    exit;
-}*/ 
-// Simulation de session pour le test
-$_SESSION['id_usertype'] = 3; // a supprimer
+if (!isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit();
+} else {
+    $id = strval($_SESSION['user']['id_user']);
+}
 
 
 $id_usertype = $_SESSION['id_usertype'] ?? null;
