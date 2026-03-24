@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <form method="post" >
-            <button type="submit" name="supprimer" >
+            <button type="submit" name="supprimer" style="padding: 10px 20px; background: #333; color: white; border: none; cursor: pointer">
                 🗑️ Confirmer la suppression
             </button>
             <button type="submit" name="annuler" style="padding: 10px 20px; cursor:pointer; margin-left: 10px;">
