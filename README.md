@@ -91,7 +91,7 @@ main
  <ins>utilisateurs d'essais fournis</ins> : <br>
  Jef : jef <br>
  Superman : superman (super-admin) <br>
- basketman : basketman <br>
+ basketman : basketman (admin basket) <br>
  volleyman : volleyman <br>
  handballman : handballman <br>
 
