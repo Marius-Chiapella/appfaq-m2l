@@ -35,6 +35,7 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 ```
 main
+|  index.php
 |  README.MD
 |
 └───doc
@@ -69,7 +70,7 @@ main
     |     main.css
     |
     └───pages
-        | index.php
+        | main.php
         | index-style.css
         |
         └───subpages
