@@ -7,8 +7,9 @@ $pdo = connexion();
 $submit = isset($_POST['submit']);
 
 if (!isset($_SESSION['user'])) {
-    header("Location: ../main.php");
+    header("Location: ../../../../index.php");
     exit();
+}
 
 $username = $_SESSION['user']['pseudo'];
 
