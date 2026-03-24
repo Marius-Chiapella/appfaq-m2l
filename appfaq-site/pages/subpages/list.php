@@ -16,7 +16,7 @@ if (!isset($_SESSION['user'])) {
 // 2) Connexion à la base de données
 $dbh = connexion();
 // Liste des utilisateurs
-if(!$sup_admin) {
+if(!$sup_admin) { // affiche tout si super-admin, sinon affiche la ligue de l'utilisateur
   $sql = "SELECT * FROM v_faq
         WHERE id_ligue = :id;";
 } else {
@@ -25,8 +25,9 @@ if(!$sup_admin) {
 try {
   $ligue = $_SESSION['user']['id_ligue'];
 
+  // Fonction sql préparer, protection contre l'injection sql
   $sth = $dbh->prepare($sql);
-  $sth->execute(array(':id' => $ligue));
+  $sth->execute(array(':id' => $ligue)); // association des variables à la requête préparée
   $rows = $sth->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $ex) {
     die("Erreur lors de la requête SQL : " . $ex->getMessage());
@@ -54,7 +55,7 @@ try {
     <h1><?= $titre ?></h1>
     <h1>M2L-list</h1>
     <p>Utilisateur : <?= $_SESSION['user']['pseudo'] ?></p>
-    <?php
+    <?php // affichage des messages
     if (empty($rows)) {
       echo "<p> Il n'y a aucun message pour l'instant !";
     } else {
@@ -65,7 +66,7 @@ try {
         <th> Ligue</th>
         <th>Question</th>
         <th>Réponse</th>";
-      if ($admin || $sup_admin) {
+      if ($admin || $sup_admin) { // verification si l'utilisateur est admin ou plus, affiche les actions et boutons en conséquence
         echo "<th> Actions </th>
             </tr>";
       } else {
@@ -73,7 +74,7 @@ try {
       }
       foreach ($rows as $row) {
         echo "<tr><td>" . $row['id_user'] . "</td><td>" . $row['pseudo'] . "</td><td>" . $row['lib_ligue'] . "</td><td>" . $row['question'] . "</td><td>" . $row['reponse'] . "</td>";
-        if ($admin || $sup_admin) {
+        if ($admin || $sup_admin) { //de même, affiche selon les droits d'utilisateur
           echo "<td><a href='list_subpages/edit.php?id=" . $row['id_faq'] . "' title='Modifier' style='text-decoration:none;'>📝</a>
                 <a href='list_subpages/delete.php?id=" . $row['id_faq'] . "' title='Supprimer' style='text-decoration:none;'onclick='return confirm('Voulez-vous vraiment supprimer cette question ?');'>🗑️</a></td>";
         }
