@@ -6,6 +6,10 @@ $titre = "Ajouter page";
 $pdo = connexion();
 $submit = isset($_POST['submit']);
 
+if (!isset($_SESSION['user'])) {
+    header("Location: ../main.php");
+    exit();
+
 $username = $_SESSION['user']['pseudo'];
 
 $id_usertype = $_SESSION['user']['id_usertype'] ?? null;
