@@ -1,4 +1,5 @@
 <?php
+// lancement de la session et variables php de base
 session_start();
 $titre = "Accueil";
 $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
@@ -17,9 +18,9 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 </head>
 
 <body>
-    <div class="barre_haute">
+    <div class="barre_haute"> <!-- on verifie si l'utilisateur est connecté, les boutons sont affichés selon ça -->
         <h2>AppFaq - M2L</h2>
-        <?php if (!isset($_SESSION['user'])||$_SESSION['user']==null): ?> <!-- //!$username || $username === 'non connecté' -->
+        <?php if (!isset($_SESSION['user'])||$_SESSION['user']==null): ?>
             <a href="subpages/register.php" id="register">S'inscrire</a>
             <a href="subpages/login.php" id="login">Se connecter</a>
         <?php else: ?>
@@ -48,7 +49,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             }
             ?>  
             
-
+<!-- Ancien test pour un form en fenêtre flottante -->
 <!--        <div id="pop-up_form">
 
             <form action="subpages/login.php" method="post" id="login_form">
@@ -107,7 +108,8 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
 
 
 <script>
-
+// Ancienne fonction pour le formulaire flottant
+/*
     const login_form    = document.getElementById("login_form");
     const register_form = document.getElementById("register_form");
     const popup_form    = document.getElementById("pop-up_form");
@@ -138,6 +140,7 @@ $username = isset($_SESSION['user']) ? $_SESSION['user'] : null;
             login_form.reset();
             register_form.reset();
         }
+*/
 
     </script>
 </body>

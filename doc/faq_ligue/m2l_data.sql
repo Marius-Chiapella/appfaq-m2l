@@ -63,7 +63,7 @@ INSERT INTO `ligue` (`id_ligue`, `lib_ligue`) VALUES
 
 INSERT INTO `user` (`id_user`, `pseudo`, `mdp`, `mail`, `id_usertype`, `id_ligue`) VALUES
 (1, 'jef', '$2y$10$Xaes8DuWAdbRxfQqW.bekekmRJZmSGuQVPnQj6hUvu8sXuO0HuyKK', 'jef@m2l.com', 1, 1),
-(2, 'basketman', '$2y$10$ApKnCR6JuED1sYlQbITvbeIGyBqxSFXJB9B.g7zgZReXWK86cjspq', 'basketman@m2l.com', 1, 2),
+(2, 'basketman', '$2y$10$ApKnCR6JuED1sYlQbITvbeIGyBqxSFXJB9B.g7zgZReXWK86cjspq', 'basketman@m2l.com', 2, 2),
 (3, 'volleyman', '$2y$10$OVRmtndF7.4.2DWPq5f0z.3ppTGzkRWdzO1DM96W0/n05U7QM6zLW', 'volleyman@m2l.com', 1, 3),
 (4, 'handballman', '$2y$10$uLWSGN4ANWY6KDUF3vC8O.wHh7eZOfGV1k8JrST/xZR92eSJwR07y', 'handballman@m2l.com', 1, 4),
 (5, 'superman', '$2y$10$nRgdifAI1O39k28AtAv7WeMCrsHRGVPm7oWl7uHaBIChUjHxpUtke', 'superman@m2l.com', 3, 5);

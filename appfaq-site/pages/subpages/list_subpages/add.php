@@ -19,7 +19,7 @@ if ($submit) {
         exit;
     }
 
-    $question = $_POST['question'] ?? '';
+    $question = $_POST['question'] ?? ''; // équivalent de isset($_POST[...] ? $_POST : '')
 
     if ($question == '') {
         $error = "La question est obligatoire.";

@@ -5,17 +5,11 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 ***
 
-# __IMPORTANT__
-<h4>
-LES PAGES LOGIN ET REGISTER SONT TEMPORAIRE ET DONC NON STYLISEE CAR VONT ETRE TRANSFORMEE EN POPUP PAR LA SUITE</h4>
+**<u>Durée</u>** : du **27/01/2026** au **24/03/2026**
 
 ***
 
-**<u>Durée</u>** : du **27/01/2026** au **xx/xx/2026**
-
-***
-
-_<h3><ins>Membres :</ins></h3>_
+### *<ins>Membres :</ins>*
 
 <p>
 - Marius CHIAPELLA <br> 
@@ -26,19 +20,23 @@ _<h3><ins>Membres :</ins></h3>_
 
 ***
 
-_<h3><ins>Contenu du dépot</ins></h3>_
+### *<ins>Contenu du dépot</ins>*
 
 > <ins>homepage.php</ins>                  : page principale  <br>
 > <ins>/doc</ins>                          : sous-dossier des documents requis pour le clients (MLD, MCD, sitemap/IHM) <br>
 
 ***
 
-_<h3><ins>Structure</ins></h3>_
+### *<ins>Installation</ins>*
+
+***
+
+### *<ins>Structure</ins>*
 
 ```
 main
+|  index.php
 |  README.MD
-|  homepage.php
 |
 └───doc
 |   |
@@ -49,6 +47,7 @@ main
 |   |     DCU.drawio
 |   |
 |   └───faq-ligue
+|   |     (deprecated ; ancien scripts sql)
 |   |     data.sql
 |   |     structure.sql
 |   |
@@ -71,10 +70,12 @@ main
     |     main.css
     |
     └───pages
-        | index.php
+        | main.php
         | index-style.css
         |
         └───subpages
+            |     disconnect.php
+            |     fonction.inc.php
             |     list.php
             |     login.php
             |     register.php
@@ -85,10 +86,12 @@ main
                       delete.php
                       edit.php
 ```
+***
+
  <ins>utilisateurs d'essais fournis</ins> : <br>
  Jef : jef <br>
  Superman : superman (super-admin) <br>
- basketman : basketman <br>
+ basketman : basketman (admin basket) <br>
  volleyman : volleyman <br>
  handballman : handballman <br>
 
