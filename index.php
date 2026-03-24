@@ -1,3 +1,3 @@
 <?php
-header('Location: ./appfaq-site/pages/index.php');
+header('Location: ./appfaq-site/pages/main.php');
 ?>
