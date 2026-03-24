@@ -4,7 +4,7 @@ session_start();
 
 // 1) Vérification connexion
 if (!isset($_SESSION['user'])) {
-    header("Location: ../../index.php");
+    header("Location: ../../main.php");
     exit();
 }
 

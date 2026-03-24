@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Vérification du mot de passe
         if ($user && password_verify($pass, $user['mdp'])) {
             $_SESSION['user'] = $user;
-            header('Location: ../index.php');
+            header('Location: ../main.php');
             exit();
         } else {
             $error = "Identifiants invalides. Veuillez recommencer.";

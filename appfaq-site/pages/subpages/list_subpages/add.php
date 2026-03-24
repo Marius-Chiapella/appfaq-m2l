@@ -55,7 +55,7 @@ if ($submit) {
   <div class="barre_haute">
     <h2>AppFaq - M2L</h2>
     <a href="disconnect.php">Se déconnecter</a>
-    <a href="../index.php">Accueil</a>
+    <a href="../main.php">Accueil</a>
   </div>
 
     <div class="content">

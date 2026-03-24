@@ -7,7 +7,7 @@ $sup_admin = $_SESSION['user']['id_usertype'] == 3 ? True : False;
 
 // 1) Vérification connexion
 if (!isset($_SESSION['user'])) {
-    header("Location: ../index.php");
+    header("Location: ../main.php");
     exit();
 } else {
     $id = strval($_SESSION['user']['id_user']);
@@ -48,7 +48,7 @@ try {
   <div class="barre_haute ">
     <h2>AppFaq - M2L</h2>
     <a href="disconnect.php">Se déconnecter</a>
-    <a href="../index.php">Accueil</a>
+    <a href="../main.php">Accueil</a>
   </div>
 
   <div class="content">

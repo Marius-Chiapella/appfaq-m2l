@@ -4,7 +4,7 @@ require_once '../fonctions.inc.php'; // On charge tes fonctions
 
 // 1) Vérification connexion
 if (!isset($_SESSION['user'])) {
-    header("Location: ../../index.php");
+    header("Location: ../../main.php");
     exit();
 }
 
