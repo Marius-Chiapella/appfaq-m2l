@@ -21,7 +21,7 @@ if ($submit) {
 
     $question = $_POST['question'] ?? ''; // équivalent de isset($_POST[...] ? $_POST : '')
 
-    if ($question == '') {
+    if ($question == '') { // empêche un envoie vide
         $error = "La question est obligatoire.";
     } else {
         $now = date('Y-m-d H:i:s');
@@ -29,6 +29,7 @@ if ($submit) {
         $sql = "INSERT INTO faq (question, dat_question, id_user) 
                       VALUES (:question, :dat_question, :id_user)";
 
+        // requête préparée
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':question' => $question,
