@@ -29,6 +29,9 @@ réaliser un site pour la maison des ligues de lorainne selon un cahier des char
 
 ### *<ins>Installation</ins>*
 
+Installer sur un serveur dedié les fichiers et pages php, installer depuis faq-ligue la base de donnée avec les deux scripts SQL de structure et données.
+
+
 ***
 
 ### *<ins>Structure</ins>*
